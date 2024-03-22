@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Horspool Algorithm", "MessAround\Horspool Algorithm.csproj", "{E9BF8AF6-27EC-49DF-A6CB-F5C409193C9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Counting Sort Algorithm", "Counting Sort Algorithm\Counting Sort Algorithm.csproj", "{6095AC15-EAD2-47EE-BD8E-99F438946B75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Counting Sort Algorithm", "Counting Sort Algorithm\Counting Sort Algorithm.csproj", "{6095AC15-EAD2-47EE-BD8E-99F438946B75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boyer-Moore Algorithm", "Boyer-Moore Algorithm\Boyer-Moore Algorithm.csproj", "{CCFC9211-8065-4FC8-B02F-F44EE908F4A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boyer-Moore Algorithm", "Boyer-Moore Algorithm\Boyer-Moore Algorithm.csproj", "{CCFC9211-8065-4FC8-B02F-F44EE908F4A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Horspool Algorithm", "Horspool Algorithm\Horspool Algorithm.csproj", "{FFA0D87B-8B11-4E1B-8B05-9DB7F34439E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E9BF8AF6-27EC-49DF-A6CB-F5C409193C9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9BF8AF6-27EC-49DF-A6CB-F5C409193C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9BF8AF6-27EC-49DF-A6CB-F5C409193C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9BF8AF6-27EC-49DF-A6CB-F5C409193C9C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6095AC15-EAD2-47EE-BD8E-99F438946B75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6095AC15-EAD2-47EE-BD8E-99F438946B75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6095AC15-EAD2-47EE-BD8E-99F438946B75}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{CCFC9211-8065-4FC8-B02F-F44EE908F4A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCFC9211-8065-4FC8-B02F-F44EE908F4A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCFC9211-8065-4FC8-B02F-F44EE908F4A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA0D87B-8B11-4E1B-8B05-9DB7F34439E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA0D87B-8B11-4E1B-8B05-9DB7F34439E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA0D87B-8B11-4E1B-8B05-9DB7F34439E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA0D87B-8B11-4E1B-8B05-9DB7F34439E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
