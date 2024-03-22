@@ -256,7 +256,7 @@ static int BoyerMooreStepByStep(String text, String pattern)
 				}
 
 				// Console writing To see what is happening with d2
-				Console.WriteLine("d2 = " + d2);
+				Console.WriteLine("k = " + k + ", d2 = " + d2);
 
 				// Find the max of d1 and d2
 				shiftAmmount = Math.Max(d1, d2);
