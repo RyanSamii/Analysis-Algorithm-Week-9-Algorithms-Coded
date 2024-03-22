@@ -7,6 +7,15 @@
 // If you find issues or errors in the code, please let me know so I can correct them.
 // ALSO NOTE: THIS IS NOT GOOD OBJECT ORIENTED PROGRAMMING PRACTICE. THIS IS JUST A SIMPLE IMPLEMENTATION OF THE ALGORITHM.
 
+// text to parse
+String text = "TEXT TO SEARCH HERE";
+
+// pattern we're looking for
+String pattern = "PATTERN TO SEARCH HERE";
+
+// IGNORE THIS JUST A RANDOM DNA SEQUENCE TO USE FOR TESTING: atgtcgctgacctaccgttctctcggaagagaccgcttacatccacctgcaatcctctatgcaggaaagacgcctgtacgatggtcggttacgtcgtgcaattcagctggttccttgcgtaacgcaatacaatcgaatgacggacactcccattagtaaccttcggcattgcgttgctgaactcgaatcgagcgttatctgtagcttgtgttggtcggtcaacctagtgatggttgtttctccatgactccttttcggtgtactctgcgtggtgcttagaatactaggtcgagggccccagatcctcccaagagtgacgatagctacttcttccctttggctctagaatttagttatgttggcgctgccggaggtctgccgatcgatctgagatccaactggcctcgttatgacgccacggtgttttgggtttcagtcatgactattcgacgccatagtgcacaccttcacccctaaacggttgtgtgcgctcgcaataatcggttcttttgacaactaatcagaacaggcttccgctggaatgccactttgcaaatgattcagcgactagactgtagttagatctgtcctccacatgaccggcctttgagcatgagagacttagacacttggtcttaggtgggatacggcaagcaacctccgaaagttgccctcacagcgaggcgccccggttcaccatatgggggggcgtgttttctacgacaagaaactccgccggagcttaaaaagtagtaattctgcagttcatacctgtttagaccctatcgtagcccacgctccctcgtatatcttgacacccagtacgcaggcagattccacgaattaagaaacggacgttcggccgatgcctgggcaactatgacgacttatgatatacaagtgaggcacaccaacgggcgttcagatatttaggaccatgtatgataaccgtatttgggctcaattcacgtgaacgggagtacgatagatgcaaaatattgtataa
+
+
 // Horspool algorithm but without priniting the steps
 //static int Horspool(String text, String pattern)
 //{
@@ -148,19 +157,9 @@ static int HorspoolStepByStep(String text, String pattern)
 }
 
 
-// calling the function
-// text to parse
-String text = "TEXT TO SEARCH HERE";
 
-// IGNORE THIS JUST A RANDOM DNA SEQUENCE TO USE FOR TESTING: atgtcgctgacctaccgttctctcggaagagaccgcttacatccacctgcaatcctctatgcaggaaagacgcctgtacgatggtcggttacgtcgtgcaattcagctggttccttgcgtaacgcaatacaatcgaatgacggacactcccattagtaaccttcggcattgcgttgctgaactcgaatcgagcgttatctgtagcttgtgttggtcggtcaacctagtgatggttgtttctccatgactccttttcggtgtactctgcgtggtgcttagaatactaggtcgagggccccagatcctcccaagagtgacgatagctacttcttccctttggctctagaatttagttatgttggcgctgccggaggtctgccgatcgatctgagatccaactggcctcgttatgacgccacggtgttttgggtttcagtcatgactattcgacgccatagtgcacaccttcacccctaaacggttgtgtgcgctcgcaataatcggttcttttgacaactaatcagaacaggcttccgctggaatgccactttgcaaatgattcagcgactagactgtagttagatctgtcctccacatgaccggcctttgagcatgagagacttagacacttggtcttaggtgggatacggcaagcaacctccgaaagttgccctcacagcgaggcgccccggttcaccatatgggggggcgtgttttctacgacaagaaactccgccggagcttaaaaagtagtaattctgcagttcatacctgtttagaccctatcgtagcccacgctccctcgtatatcttgacacccagtacgcaggcagattccacgaattaagaaacggacgttcggccgatgcctgggcaactatgacgacttatgatatacaagtgaggcacaccaacgggcgttcagatatttaggaccatgtatgataaccgtatttgggctcaattcacgtgaacgggagtacgatagatgcaaaatattgtataa
-
-
+// display the text and pattern
 Console.WriteLine("Text to search:" + text);
-// pattern we're looking for
-String pattern = "PATTERN TO SEARCH HERE";
-
-
-
 Console.WriteLine("Pattern to Find:" + pattern);
 
 // call the function

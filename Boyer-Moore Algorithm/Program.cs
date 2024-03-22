@@ -7,6 +7,12 @@
 // If you find issues or errors in the code, please let me know so I can correct them.
 // ALSO NOTE: THIS IS NOT GOOD OBJECT ORIENTED PROGRAMMING PRACTICE. THIS IS JUST A SIMPLE IMPLEMENTATION OF THE ALGORITHM.
 
+// text to parse
+String text = "TEXT TO SEARCH HERE";
+// pattern we're looking for
+String pattern = "PATTERN TO SEARCH HERE";
+
+
 
 // Function to build the shift table
 static Dictionary<char, int> buildShiftTable(string pattern)
@@ -173,54 +179,102 @@ static int BoyerMooreStepByStep(String text, String pattern)
 		{
 			// this will store the ammount to shift the pattern
 			int shiftAmmount = 0;
-			
+
 			// Bad-symbol shift
 			int d1 = 0;
 			// good-suffix shift
 			int d2 = 0;
 
-			// find if last element is in shift table
-			if (shiftTable.ContainsKey(text[i + pattern.Length - 1]))
+			// figuring out which case this is for the shift
+			if (k == 0)
 			{
-				// if match, then shift by the value in the shift table
-				 d1 = shiftTable[text[i + pattern.Length - 1]];
+				// find if last element is in shift table
+				if (!shiftTable.ContainsKey(text[i + pattern.Length - 1]))
+				{
+					// Case 1
+					// if no match, then shift by the length of the pattern
+					shiftAmmount = pattern.Length;
+
+					// printing whats happening for clarity
+					Console.WriteLine("Case 1 shift entire length of pattern: " + shiftAmmount + "\n");
+				}
+				else
+				{
+					// Case 2
+					// if match, then shift by the value in the shift table
+					shiftAmmount = shiftTable[text[i + pattern.Length - 1]];
+
+					// printing whats happening for clarity
+					Console.WriteLine("Case 2 shift based on shift table: " + shiftAmmount + "\n");
+
+				}
 			}
 			else
 			{
-				// if no match, then shift by the length of the pattern
-				d1= pattern.Length;
+				// Case 3 & 4
+				// find if last element is in shift table
+				int characterToCheck = i + pattern.Length - 1 - k;
+				if (shiftTable.ContainsKey(text[characterToCheck]))
+				{
+					// if match, then shift by the value in the shift table
+					d1 = shiftTable[text[characterToCheck]];
+				}
+				else
+				{
+					// if no match, then shift by the length of the pattern
+					d1 = pattern.Length;
+				}
+
+				// Console writing To see what is happening with d1
+				Console.WriteLine("d1 = " + (d1 + k) + " - " + k + " = " + (d1));
+				
+				// calculate d1 for this loop
+				d1 = d1 - k;
+
+
+				// if d1 is less than or equal to 0, then we shift by 1 as a default because we want to always be moving at least 1 to the right
+				if (d1 <= 0)
+				{
+					d1 = 1;
+					Console.WriteLine("d1 <= 0 so set d1 to 1");
+
+				}
+				// for debugging to see what d1 is without showing all the calculations
+				//Console.WriteLine("d1 = " + d1);
+
+
+				// find d2 for this loop
+				// find if k element is in suffix table
+				if (suffixTable.ContainsKey(k))
+				{
+					d2 = suffixTable[k];
+				}
+				else
+				{
+					// if no match, then set d2 to 0
+					d2 = 0;
+				}
+
+				// Console writing To see what is happening with d2
+				Console.WriteLine("d2 = " + d2);
+
+				// Find the max of d1 and d2
+				shiftAmmount = Math.Max(d1, d2);
+
+				// printing for clarity
+				{
+					if (shiftAmmount == d1)
+					{
+						Console.Write("Case 3 ");
+					}
+					else
+					{
+
+						Console.Write("Case 4 ");
+					}
+					Console.WriteLine("shift based on d1, d2 comparison ^^^\n");
+				}
 			}
-
-			// Console writing To see what is happening
-			Console.WriteLine("d1 = " + d1 + " - " + k + " = " + (d1-k));
-
-			// calculate d1 for this loop
-			d1 = d1 - k;
-			// if d1 is less than or equal to 0, then we shift by 1 as a default because we want to always be moving at least 1 to the right
-			if (d1 <= 0)
-				d1 = 1;
-			
-			// for debugging to see what d1 is without showing all the calculations
-			//Console.WriteLine("d1 = " + d1);
-
-			
-			// find d2 for this loop
-			// find if k element is in suffix table
-			if (suffixTable.ContainsKey(k))
-			{
-				d2 = suffixTable[k];
-			}
-			else
-			{
-				// if no match, then set d2 to 0
-				d2 = 0;
-			}
-
-			// Console writing To see what is happening with d2
-			Console.WriteLine("d2 = " + d2);
-			
-			// Find the max of d1 and d2
-			shiftAmmount = Math.Max(d1, d2);
 
 			// change the index by the shift ammount
 			i += shiftAmmount;
@@ -238,16 +292,14 @@ static int BoyerMooreStepByStep(String text, String pattern)
 	// I assume you had a pattern length of 1 and it was not found but even then you should get caught by the length check above
 	// *shrug* I don't know :/
 	return -1;
-}
 
+}
 
 // printing the starting information
 
 // text to parse
-String text = "TEXT TO SEARCH HERE";
 Console.WriteLine("Text to search:" + text);
 // pattern we're looking for
-String pattern = "PATTERN TO SEARCH HERE";
 Console.WriteLine("Pattern to Find:" + pattern + "\n");
 
 

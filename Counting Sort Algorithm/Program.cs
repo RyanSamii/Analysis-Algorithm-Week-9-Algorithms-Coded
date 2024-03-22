@@ -7,6 +7,9 @@
 // If you find issues or errors in the code, please let me know so I can correct them.
 // ALSO NOTE: THIS IS NOT GOOD OBJECT ORIENTED PROGRAMMING PRACTICE. THIS IS JUST A SIMPLE IMPLEMENTATION OF THE ALGORITHM.
 
+// starting with a string to make it easier to change
+string staringString = "STRING TO SORT HERE";
+
 
 // build a frequency for counting sour algorithm
 static Dictionary<char, int> buildFrequencyTable(char[] ArrayToSort)
@@ -57,8 +60,7 @@ static Dictionary<char,int> buildDistributionTable(Dictionary<char, int>frequenc
 	return distributionTable;
 }
 
-// starting with a string to make it easier to change
-string staringString = "STARTING STRING HERE";
+
 
 // Char Array to sort
 char[] container;
