@@ -58,7 +58,7 @@ static Dictionary<char,int> buildDistributionTable(Dictionary<char, int>frequenc
 }
 
 // starting with a string to make it easier to change
-string staringString = "STARTING STRING HERE ";
+string staringString = "STARTING STRING HERE";
 
 // Char Array to sort
 char[] container;

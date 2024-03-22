@@ -244,10 +244,10 @@ static int BoyerMooreStepByStep(String text, String pattern)
 // printing the starting information
 
 // text to parse
-String text = "FIND_THE_PATTERN_HERE";
+String text = "TEXT TO SEARCH HERE";
 Console.WriteLine("Text to search:" + text);
 // pattern we're looking for
-String pattern = "HERE";
+String pattern = "PATTERN TO SEARCH HERE";
 Console.WriteLine("Pattern to Find:" + pattern + "\n");
 
 
