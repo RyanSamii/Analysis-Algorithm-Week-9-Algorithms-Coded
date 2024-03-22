@@ -226,7 +226,7 @@ static int BoyerMooreStepByStep(String text, String pattern)
 				}
 
 				// Console writing To see what is happening with d1
-				Console.WriteLine("d1 = " + (d1 + k) + " - " + k + " = " + (d1));
+				Console.WriteLine("d1 = " + (d1) + " - " + k + " = " + (d1 - k));
 				
 				// calculate d1 for this loop
 				d1 = d1 - k;
