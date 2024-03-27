@@ -10,7 +10,7 @@
 // text to parse
 String text = "TEXT TO SEARCH HERE";
 // pattern we're looking for
-String pattern = "PATTERN TO SEARCH HERE";
+String pattern = "PATTERN TO FIND HERE";
 
 
 
@@ -169,6 +169,8 @@ static int BoyerMooreStepByStep(String text, String pattern)
 		// if it is a match, then we found the pattern
 		if (match == true)
 		{
+
+			Console.WriteLine("----------------------------------------\n");
 			// print the number of comparisons
 			Console.WriteLine("# of Comparisions: " + comparisonsCount);
 			// return the index of the pattern
@@ -196,7 +198,7 @@ static int BoyerMooreStepByStep(String text, String pattern)
 					shiftAmmount = pattern.Length;
 
 					// printing whats happening for clarity
-					Console.WriteLine("Case 1 shift entire length of pattern: " + shiftAmmount + "\n");
+					Console.WriteLine("Case 1 shift entire length of pattern: " + shiftAmmount);
 				}
 				else
 				{
@@ -205,7 +207,7 @@ static int BoyerMooreStepByStep(String text, String pattern)
 					shiftAmmount = shiftTable[text[i + pattern.Length - 1]];
 
 					// printing whats happening for clarity
-					Console.WriteLine("Case 2 shift based on shift table: " + shiftAmmount + "\n");
+					Console.WriteLine("Case 2 shift based on shift table: " + shiftAmmount);
 
 				}
 			}
@@ -272,10 +274,10 @@ static int BoyerMooreStepByStep(String text, String pattern)
 
 						Console.Write("Case 4 ");
 					}
-					Console.WriteLine("shift based on d1, d2 comparison ^^^\n");
+					Console.WriteLine("shift based on d1, d2 comparison ^^^");
 				}
 			}
-
+			Console.WriteLine("----------------------------------------\n");
 			// change the index by the shift ammount
 			i += shiftAmmount;
 
@@ -322,23 +324,30 @@ Console.WriteLine();
 
 // print the suffix table and shift table to see what is happening
 {
-	Console.WriteLine("suffix table:");
+	Console.WriteLine("suffix table (ammount to shift based on number of matches):");
 	//display shift able in a nice formated 
 	Dictionary<int, int> prefixtTable = buildSuffixTable(pattern);
-	for (int i = 0; i < prefixtTable.Count; i++)
+
+	Console.WriteLine("Shift Table:");
+	Console.WriteLine(" Number Of Matches |  Shift Ammount");
+	//display shift able in a nice formated 
+	for (int i = 0; i < prefixtTable.Count - 1 ; i++)
 	{
-		Console.WriteLine(prefixtTable.ElementAt(i));
+		Console.WriteLine("         " + prefixtTable.ElementAt(i).Key + "         |       " + prefixtTable.ElementAt(i).Value);
 	}
+	Console.WriteLine();
 }
 // print the shift table to see what is happening
 // its here in case you want to see it but just remember this isn't d1 its just the shift table that is needed to calculate d1
 
 {
 	Dictionary<char, int> shiftTable = buildShiftTable(pattern);
-	Console.WriteLine("\nShift table (remember to subract k(number of matches)):");
+	Console.WriteLine("Shift Table (remember to subtract k [number of matches]):");
+	Console.WriteLine(" Character |  Shift Ammount");
 	//display shift able in a nice formated 
 	for (int i = 0; i < shiftTable.Count; i++)
 	{
-		Console.WriteLine(shiftTable.ElementAt(i));
+		Console.WriteLine("     " + shiftTable.ElementAt(i).Key + "     |       " + shiftTable.ElementAt(i).Value);
 	}
+	Console.WriteLine(" Not Found |       " + pattern.Length);
 }

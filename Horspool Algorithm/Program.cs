@@ -172,9 +172,11 @@ Console.WriteLine(locationString);
 Dictionary<char, int> shiftTable = new Dictionary<char, int>();
 shiftTable = buildShiftTable(pattern);
 
+Console.WriteLine("Shift Table:");
+Console.WriteLine(" Character |  Shift Ammount");
 //display shift able in a nice formated 
 for (int i = 0; i < shiftTable.Count; i++)
 {
-	Console.WriteLine(shiftTable.ElementAt(i));
+	Console.WriteLine("     " + shiftTable.ElementAt(i).Key + "     |       " + shiftTable.ElementAt(i).Value);
 }
-Console.WriteLine("[NotFound," + pattern.Length + "]");
+Console.WriteLine(" Not Found |       " + pattern.Length);
